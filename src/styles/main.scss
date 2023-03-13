@@ -1,0 +1,134 @@
+@use 'variaveis';
+@use 'details';
+@use 'footer';
+@use 'about';
+@use 'hero';
+@use 'header';
+
+
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif;
+    list-style: none;
+
+    
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+    
+}
+
+@mixin text ($fontSize: 15px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 8px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 15px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text--big {
+    @include text(20px);
+    @media (max-width: 768px) {
+        font-size: 18px;    }
+
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px)
+}
+
+.title--big {
+    @include title(20px);
+
+}
+
+.title {
+    @include title;
+
+}
+
+.title--small {
+    @include title(12px);
+
+}
+
+.position {
+    position: relative;
+}
+
+
+
+
+.marginTop {
+    margin-top: 8px;
+    @media (max-width: 768px) {
+        margin-top: 30px;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    color: variaveis.$corTextoPrincipal;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    text-transform: uppercase;
+    border-radius: 6px;
+    text-decoration: none; 
+    padding: 4px 18px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+
+    &:hover {
+        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 3%);
+    }
+
+
+
+
+    &--secondary {
+        background-color: variaveis.$corDeFundoBotaoSecundario;
+        border-color: variaveis.$corDeFundoBotaoSecundario;
+        
+
+        &:hover {
+            background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
+        }
+    }
+
+    &--dark {
+       background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+       border-color: variaveis.$corTextoSecundario;
+
+       &:hover {
+        background-color: variaveis.$corTextoSecundario;
+        color: variaveis.$corDeFundo;
+       }
+    }
+}

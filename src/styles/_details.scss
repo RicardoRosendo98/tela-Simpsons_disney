@@ -1,0 +1,28 @@
+@use 'variaveis';
+
+.details{
+    border-bottom: 2px solid variaveis.$corDaBarra;
+    display: flex;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+
+    &__content {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 15px;
+        margin-right: 40px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 2px solid transparent;
+        transition: all ease .5s;
+        
+
+        &:hover {
+            border-bottom: 2px solid variaveis.$corTextoPrincipal;
+            display: inline-block;    
+            position: relative;
+        }
+    }
+}

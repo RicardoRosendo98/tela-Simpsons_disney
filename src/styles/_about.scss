@@ -1,0 +1,57 @@
+.about {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr ;
+    @media (max-width: 768px) {
+        display: block;
+    }
+        
+    h1 {
+        padding-bottom: 1.5em;
+    }
+
+    &__paragraph {
+        max-width: 810px;
+        width: 77%;
+        @media (max-width: 768px) {
+            width: 300px;
+            max-width: 267px;
+        }
+    }
+
+    &__specification {
+        margin-top: 62px;
+        @media (max-width: 768px) {
+            display: flex;
+        }
+       
+
+        &__item {
+            margin-top: 10px;
+            
+            
+            img{
+                height: 20px;
+                margin-right: 10px;
+                vertical-align: top;
+            }
+
+            p {
+                margin-bottom: 0;
+                
+            }
+
+            &__content {
+                margin-top: 60px;
+
+
+                p {
+                    margin-bottom: 0;
+                }
+
+            }
+        }
+
+    }
+
+}
+
